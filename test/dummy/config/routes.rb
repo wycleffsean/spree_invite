@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
 
-  mount SpreeBetaInvite::Engine => "/spree_beta_invite"
+  mount Spree::Invite::Engine => "/spree_invite"
 end

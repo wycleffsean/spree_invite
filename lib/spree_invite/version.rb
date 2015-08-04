@@ -1,5 +1,5 @@
 module Spree
-  module BetaInvite
+  module Invite
     VERSION = "0.0.1"
   end
 end

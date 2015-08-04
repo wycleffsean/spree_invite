@@ -1,2 +1,2 @@
-SpreeBetaInvite::Engine.routes.draw do
+Spree::Invite::Engine.routes.draw do
 end

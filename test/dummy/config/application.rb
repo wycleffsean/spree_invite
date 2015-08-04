@@ -3,7 +3,7 @@ require File.expand_path('../boot', __FILE__)
 require 'rails/all'
 
 Bundler.require(*Rails.groups)
-require "spree_beta_invite"
+require "spree_invite"
 
 module Dummy
   class Application < Rails::Application
