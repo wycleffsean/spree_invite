@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     spree_invite (0.0.1)
-      rails (~> 4.2.3)
+      rails (~> 4.2.0)
 
 GEM
   remote: https://rubygems.org/
