@@ -1,0 +1,6 @@
+en:
+  activerecord:
+    models:
+      spree/application:
+        one: Application
+        other: Applications

@@ -1,4 +1,5 @@
 module Spree
-  class Application < ActiveRecord::Base
+  class Application < Spree::Base
+    self.table_name = "spree_invite_applications"
   end
 end

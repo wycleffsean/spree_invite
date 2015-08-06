@@ -2,6 +2,7 @@ module Spree
   module Invite
     class Engine < ::Rails::Engine
       isolate_namespace Spree
+      engine_name 'spree_invite'
 
       def self.activate
         Dir.glob( Rails.root + 'app/**/*_decorator*.rb') do |p|
