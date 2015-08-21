@@ -1,0 +1,13 @@
+<%= render :partial => 'spree/shared/error_messages', :locals => { :target => @application } %>
+
+<%= form_for @application do |f| %>
+  <div>
+    <p class="field" data-hook="first_name">
+      <%= label_tag "first_name", Spree.t(:expiration) %><span class="required">*</span><br />
+      <%= text_field_tag "first_name", '', :id => 'first_name', :class => "required", :placeholder => "First name" %>
+    </p>
+  </div>
+  
+  <%= f.submit Spree.t(:apply), class: 'continue' %>
+  <script>Spree.disableSaveOnClick();</script>
+<% end %>

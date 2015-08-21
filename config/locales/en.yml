@@ -4,3 +4,6 @@ en:
       spree/application:
         one: Application
         other: Applications
+  spree:
+    invite:
+      application_received: "Application received!"
