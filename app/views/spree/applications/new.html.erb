@@ -1,6 +1,6 @@
 <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @application } %>
 
-<%= form_for @application do |f| %>
+<%= form_for @application, url: applications_path do |f| %>
   <div>
     <p class="field" data-hook="first_name">
       <%= label_tag "first_name", Spree.t(:expiration) %><span class="required">*</span><br />

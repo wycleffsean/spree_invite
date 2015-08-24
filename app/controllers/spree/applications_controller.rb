@@ -1,12 +1,13 @@
 module Spree
   class ApplicationsController < ApplicationController
     def new
-      @application = Spree::Application.new
+      @application = Invite::ApplicationForm.new
     end
 
     def create
-      @application = Spree::Application.new(application_params)
+      @application = Invite::ApplicationForm.new(application_params)
       if @application.valid?
+        create_application
         flash[:notice] = Spree.t('invite.application_received')
         redirect_to '' 
       else
@@ -17,7 +18,11 @@ module Spree
     private
 
     def application_params
-      params.require(:application).except!(:id).permit!
+      params.require(:invite_application_form).except!(:id).permit!
+    end
+
+    def create_application
+      Application.create form: @application.to_hash
     end
   end
 end

@@ -10,19 +10,19 @@
   <%= search_form_for @search, :url => spree.admin_applications_url  do |s| %>
     <div class="date-range-filter field align-center">
       <%= label_tag nil, Spree.t(:start), :class => 'inline' %>
-      <%= s.text_field :created_at_gt, :class => 'datepicker datepicker-from', :value => datepicker_field_value(params[:q][:created_at_gt]) %>
+      <%= s.text_field :updated_at_gt, :class => 'datepicker datepicker-from', :value => datepicker_field_value(params[:q][:updated_at_gt]) %>
       
       <span class="range-divider">
         <i class="icon-arrow-right"></i>
       </span>
 
-      <%= s.text_field :created_at_lt, :class => 'datepicker datepicker-to', :value => datepicker_field_value(params[:q][:created_at_lt]) %>
+      <%= s.text_field :updated_at_lt, :class => 'datepicker datepicker-to', :value => datepicker_field_value(params[:q][:updated_at_lt]) %>
       <%= label_tag nil, Spree.t(:end), :class => 'inline' %>
     </div>
 
     <div class="date-range-filter field align-center">
-      <%= label_tag nil, Spree.t(:email), :class => 'inline' %>
-      <%= s.text_field :email_eq, style: "width:240px" %>
+      <%#= label_tag nil, Spree.t(:email), :class => 'inline' %>
+      <%#= s.text_field :email_eq, style: "width:240px" %>
     </div>
 
     <div class="actions filter-actions">
@@ -44,8 +44,6 @@
       <tr data-hook="admin_applications_index_headers">
         <th><%= Spree.t(:email) %></th>
         <th><%= Spree.t(:plan) %></th>
-        <th><%= Spree.t(:subscribed_at) %></th>
-        <th><%= Spree.t(:unsubscribed_at) %></th>
         <th data-hook="admin_recurring_plans_index_header_actions" class="actions"></th>
       </tr>
     </thead>
@@ -53,11 +51,8 @@
       <% @applications.each do |application|%>
         <tr data-hook="admin_applications_index_rows" class="<%= cycle('odd', 'even')%>">
           <td class="align-center"><%= application.email %></td>
-          <td class="align-center"><%= link_to application.plan.api_plan_id, edit_admin_recurring_plan_url(application.plan.recurring, application.plan) %></td>
-          <td class="align-center"><%= application.subscribed_at.try(:strftime, '%d-%h-%Y') %></td>
-          <td class="align-center"><%= application.unsubscribed_at.try(:strftime, '%d-%h-%Y') || 'N/A' %></td>
           <td data-hook="admin_recurring_plans_index_row_actions" class="actions">
-            <%= link_to Spree.t(:view_events), admin_application_events_url(q: {application_email_eq: application.email}) %>
+            TODO
           </td>
         </tr>
       <% end %>

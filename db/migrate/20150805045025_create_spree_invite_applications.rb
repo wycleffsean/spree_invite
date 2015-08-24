@@ -1,11 +1,7 @@
 class CreateSpreeInviteApplications < ActiveRecord::Migration
   def change
     create_table :spree_invite_applications do |t|
-      t.string :first_name
-      t.string :last_name
-      t.string :email
-      t.hstore :form
-      t.integer :address_id
+      t.json :form
 
       t.timestamps null: false
     end
