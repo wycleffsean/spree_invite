@@ -9,9 +9,9 @@ Gem::Specification.new do |s|
   s.version     = Spree::Invite::VERSION
   s.authors     = ["Sean Carey"]
   s.email       = ["wycleffsean@gmail.com"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of SpreeInvite."
-  s.description = "TODO: Description of SpreeInvite."
+  s.homepage    = "https://github.com/wycleffsean/spree_invite"
+  s.summary     = "Soft opening application/invite system for Spree Commerce"
+  s.description = "Soft opening application/invite system for Spree Commerce"
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
@@ -21,4 +21,5 @@ Gem::Specification.new do |s|
   s.add_dependency "virtus", "~> 1.0.0"
 
   s.add_development_dependency "sqlite3"
+  s.add_development_dependency "spree_core", "~> 3.0.0"
 end
